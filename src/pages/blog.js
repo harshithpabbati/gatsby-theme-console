@@ -9,11 +9,11 @@ export default class IndexPage extends React.Component{
     return(
       <Layout>
         <SEO title="Home" />
-        <h1>Projects</h1>
+        <h1>Blog</h1>
         <div className="list">
           <ul>
-            {this.props.data.allProjectsYaml.edges.map(edge => (
-              <Link to={`/projects/` + edge.node.slug}>
+            {this.props.data.allBlogYaml.edges.map(edge => (
+              <Link to={`/blog/` + edge.node.slug}>
                 <li>{edge.node.title}</li>
               </Link>
             ))}
@@ -25,11 +25,12 @@ export default class IndexPage extends React.Component{
 }
 export const pageQuery = graphql`
     {
-        allProjectsYaml{
+        allBlogYaml{
             edges{
                 node{
                     title
                     slug
+                    content
                 }
             }
         }

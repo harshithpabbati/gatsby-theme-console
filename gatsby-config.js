@@ -9,12 +9,30 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `content`,
+        path: `${__dirname}/src/content/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-yaml-full`,
+      options: {
+        createChildNodes: true,
+        plugins: [
+          `gatsby-yaml-full-markdown`, // Enable !markdown tags
+          `gatsby-yaml-full-file`,
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
