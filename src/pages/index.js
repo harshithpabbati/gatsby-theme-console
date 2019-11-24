@@ -9,13 +9,15 @@ export default class IndexPage extends React.Component{
     return(
       <Layout>
         <SEO title="Home" />
-        <h1>Projects</h1>
+        <h4>Blog</h4>
         <div className="list">
           <ul>
-            {this.props.data.allProjectsYaml.edges.map(edge => (
-              <Link to={`/projects/` + edge.node.slug}>
-                <li>{edge.node.title}</li>
-              </Link>
+            {this.props.data.allMarkdownRemark.edges.map(edge => (
+              <li className="p-1">
+                <Link to={`/blog/` + edge.node.frontmatter.slug}>
+                  [ {edge.node.frontmatter.date} ]: {edge.node.frontmatter.title}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
@@ -25,11 +27,16 @@ export default class IndexPage extends React.Component{
 }
 export const pageQuery = graphql`
     {
-        allProjectsYaml{
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }
+            filter: { frontmatter: { draft: { ne: true } } }){
             edges{
                 node{
-                    title
-                    slug
+                    frontmatter{
+                        title
+                        date
+                        slug
+                    }
+                    html
                 }
             }
         }

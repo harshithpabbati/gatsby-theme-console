@@ -2,13 +2,13 @@ const path = require("path")
 
 function createBlogPages(result, createPage) {
   const BlogTemplate = path.resolve(`src/templates/blogTemplate.js`)
-  const blogs = result.data.allBlogYaml.edges
+  const blogs = result.data.allMarkdownRemark.edges
   blogs.forEach(({ node }) => {
     createPage({
-      path: "/blog" + "/" + node.slug,
+      path: "/blog" + "/" + node.frontmatter.slug,
       component: BlogTemplate,
       context: {
-        slug: node.slug
+        slug: node.frontmatter.slug
       },
     })
   })
@@ -17,16 +17,20 @@ function createBlogPages(result, createPage) {
 function graphqlForBlog(graphql, createPage) {
   return graphql(`
     {
-  allBlogYaml(sort: { fields: slug, order: ASC }){
-    edges{
-      node{
-        title
-        slug
-        content
-      }
+        allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }){
+            edges{
+                node{
+                    frontmatter{
+                        title
+                        author
+                        date
+                        slug
+                    }
+                    html
+                }
+            }
+        }
     }
-  }
-}
   `).then(result => {
     if (result.errors) {
       throw result.errors

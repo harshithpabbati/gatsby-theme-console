@@ -1,6 +1,11 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap')
+@import "~katex/dist/katex.min.css"
+
 body
   background-color: white
   color: black
+  font-family: 'Lato', sans-serif
 
 header
   margin-top: 25px
@@ -32,7 +37,7 @@ header
       text-decoration: none
 
     li
-      font-size: 20px
+      font-size: 16px
       display: inline
       margin-left: 10px
       color: black!important
@@ -55,13 +60,13 @@ header
 
 .content-wrapper
   width: 90%
-  max-width: 600px
+  max-width: 1000px
   margin-right: auto
   margin-left: auto
 
 
 .list
-  font-size: 20px
+  font-size: 16px
   ul
     margin-bottom: 14px
     margin-top: 14px
@@ -75,14 +80,55 @@ header
 
     a
       text-decoration: none
+      color: black
+
+    a:hover
+      text-decoration: none
+      background-color: black
+      color: white!important
 
     li
       color: black!important
       display: list-item
       text-align: -webkit-match-parent
 
-    li:hover
-      text-decoration: underline
-
 .list:hover
   text-decoration: none!important
+
+
+.gatsby-highlight
+  background-color: #eeeeee
+  padding: 1rem
+  margin: 1rem
+  position: relative
+  -webkit-overflow-scrolling: touch
+  border-radius: 0 0 0.25rem 0.25rem
+
+.gatsby-highlight pre[class*="language-"]
+  -webkit-overflow-scrolling: touch
+
+.gatsby-highlight pre[class*="language-"]::before
+  background: black
+  border-radius: 0 0 0.25rem 0.25rem
+  color: white
+  font-size: 12px
+  letter-spacing: 0.025rem
+  padding: 0.1rem 0.5rem
+  position: absolute
+  right: 1rem
+  text-align: right
+  text-transform: uppercase
+  top: 0
+
+.gatsby-highlight pre[class*="language-"].line-numbers
+  padding: 0 0 0 2.8em
+  overflow: initial
+
+.content
+  text-align: justify
+  text-justify: inter-word
+  p
+    text-align: justify
+    text-justify: inter-word
+  a
+    text-decoration: none

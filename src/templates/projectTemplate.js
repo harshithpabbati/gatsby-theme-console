@@ -10,8 +10,8 @@ export default class ProjectTemplate extends React.Component{
       <Layout>
         <SEO title={this.props.data.projectsYaml.title} />
         <div className="content">
-          <h1>{this.props.data.projectsYaml.title}</h1>
-          <p dangerouslySetInnerHTML={{ __html: this.props.data.projectsYaml.content}} />
+          <h3>{this.props.data.projectsYaml.title}</h3>
+          <p className="p-4" dangerouslySetInnerHTML={{ __html: this.props.data.projectsYaml.content}} />
         </div>
       </Layout>
     )

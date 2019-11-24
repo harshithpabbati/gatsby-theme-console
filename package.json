@@ -1,23 +1,30 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-theme-console",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Gatsby Console Theme",
+  "version": "0.0.1",
+  "author": "Harshith Pabbati <pabbatiharshith@gmail.com>",
   "dependencies": {
     "gatsby": "^2.17.11",
     "gatsby-image": "^2.2.31",
+    "gatsby-plugin-google-analytics": "^2.1.28",
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-offline": "^3.0.19",
     "gatsby-plugin-react-helmet": "^3.1.14",
     "gatsby-plugin-sass": "^2.1.23",
     "gatsby-plugin-sharp": "^2.2.37",
+    "gatsby-remark-emoji": "0.0.3",
+    "gatsby-remark-katex": "^3.1.17",
+    "gatsby-remark-prismjs": "^3.3.24",
     "gatsby-source-filesystem": "^2.1.36",
+    "gatsby-transformer-remark": "^2.6.37",
     "gatsby-transformer-sharp": "^2.3.3",
     "gatsby-transformer-yaml-full": "^0.2.0",
     "gatsby-yaml-full-file": "^0.2.0",
     "gatsby-yaml-full-markdown": "^0.2.0",
+    "katex": "^0.11.1",
     "node-sass": "^4.13.0",
+    "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -27,7 +34,8 @@
     "prettier": "^1.19.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "console"
   ],
   "license": "MIT",
   "scripts": {
@@ -41,9 +49,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/harshithpabbati/gatsby-theme-console"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/harshithpabbati/gatsby-theme-console/issues"
   }
 }
