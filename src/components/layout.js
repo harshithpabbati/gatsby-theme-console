@@ -12,6 +12,7 @@ const Layout = ({ children }) => {
             edges{
                 node{
                     title
+                    webcounterlink
                 }
             }
         }
@@ -34,7 +35,7 @@ const Layout = ({ children }) => {
             <p>Made with <a href="https://github.com/harshithpabbati/gatsby-theme-console">Gatsby</a>.</p>
           </div>
           <div className="col-sm-2">
-            <img src="https://www.webfreecounter.com/hit.php?id=grxakdo&nd=6&style=1" border="0" alt="visitor counter" />
+            <img src={data.allConfigYaml.edges[0].node.webcounterlink} border="0" alt="visitor counter" />
           </div>
         </footer>
       </div>
