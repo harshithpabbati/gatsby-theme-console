@@ -4,18 +4,16 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo"
 
 
-export default class ProjectTemplate extends React.Component{
-  render() {
-    return(
-      <Layout>
-        <SEO title={this.props.data.projectsYaml.title} />
-        <div className="content">
-          <h3>{this.props.data.projectsYaml.title}</h3>
-          <p className="p-4" dangerouslySetInnerHTML={{ __html: this.props.data.projectsYaml.content}} />
-        </div>
-      </Layout>
-    )
-  }
+export default function BlogTemplate({ data: { projectsYaml } }) {
+  return(
+    <Layout>
+      <SEO title={projectsYaml.title} />
+      <div className="content">
+        <h3>{projectsYaml.title}</h3>
+        <p className="p-4" dangerouslySetInnerHTML={{ __html: projectsYaml.content}} />
+      </div>
+    </Layout>
+  )
 }
 export const pageQuery = graphql`
     query($slug: String!) {

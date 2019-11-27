@@ -10,7 +10,7 @@ export default class About extends React.Component{
       <Layout>
         <SEO title="About" />
         <h3>About</h3>
-        <p className="p-4" dangerouslySetInnerHTML={{ __html: this.props.data.allConfigYaml.edges[0].node.about}} />
+        <div className="p-4" dangerouslySetInnerHTML={{ __html: this.props.data.allConfigYaml.edges[0].node.about}} />
       </Layout>
     )
   }
