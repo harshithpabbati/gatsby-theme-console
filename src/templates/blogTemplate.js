@@ -13,7 +13,7 @@ export default function BlogTemplate({ data: { markdownRemark } }) {
       <SEO title={markdownRemark.frontmatter.title} />
       <div className="content">
         <Link to={`/projects/` + markdownRemark.frontmatter.project}>
-          <span className="badge p-2 mr-1 badge-dark">{markdownRemark.frontmatter.project}</span>
+          <span className="badge badge-dark">{markdownRemark.frontmatter.project}</span>
         </Link>
         <h3 className="p-2">{markdownRemark.frontmatter.title}</h3>
         <h5 className="p-2"> - {markdownRemark.frontmatter.author}</h5>

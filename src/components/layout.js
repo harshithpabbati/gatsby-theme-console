@@ -25,17 +25,16 @@ const Layout = ({ children }) => {
       <div
       >
         <main>{children}</main>
-        <footer className="footer row m-0">
-          <div className="col-sm-2 text-center">
-            <Link to="/contact">
-              <p>contact</p>
-            </Link>
-          </div>
-          <div className="col-sm-8 text-center">
-            <p>Made with <a href="https://github.com/harshithpabbati/gatsby-theme-console">Gatsby</a>.</p>
-          </div>
-          <div className="col-sm-2">
-            <img src={data.allConfigYaml.edges[0].node.webcounterlink} border="0" alt="visitor counter" />
+        <footer className="footer m-0">
+          <div className="menu-footer">
+            <ul>
+              <div style={{textAlign: 'center'}}>
+                <Link to="/contact" style={{float: 'left'}}>
+                  <li>contact</li>
+                </Link>
+                <li>Made with <a href="https://github.com/harshithpabbati/gatsby-theme-console">Gatsby</a>.</li>
+              </div>
+            </ul>
           </div>
         </footer>
       </div>
