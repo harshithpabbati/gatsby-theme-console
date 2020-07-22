@@ -12,9 +12,9 @@ export default function BlogTemplate({ data: { markdownRemark } }) {
     <Layout>
       <SEO title={markdownRemark.frontmatter.title} />
       <div className="content">
-        <Link to={`/projects/` + markdownRemark.frontmatter.project}>
-          <span className="badge badge-dark">{markdownRemark.frontmatter.project}</span>
-        </Link>
+        {markdownRemark.frontmatter.tags.map(tag => (
+          <span className="badge badge-dark">{tag}</span>
+        ))}
         <h3 className="p-2">{markdownRemark.frontmatter.title}</h3>
         <h5 className="p-2"> - {markdownRemark.frontmatter.author}</h5>
         <p style={{float: 'right'}}>{markdownRemark.frontmatter.date}</p><br />
@@ -31,7 +31,7 @@ export const pageQuery = graphql`
                 slug
                 title
                 date
-                project
+                tags
             }
             html
         }

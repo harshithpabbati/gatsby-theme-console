@@ -3,7 +3,7 @@ title: "Gatsby Theme Console"
 date: '2018-08-04'
 author: Harshith Pabbati
 slug: "firstblog"
-project: 'gatsby-theme-console'
+tags: ['gatsby', 'console-theme']
 draft: false
 ---
 #### Support for Math!
